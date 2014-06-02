@@ -115,6 +115,10 @@ p:last-child {
     text-align: center;
 }
 
+.hide {
+    opacity: 0;
+}
+
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;

@@ -1,6 +1,25 @@
 $('.parallax').scrolly({bgParallax: true});
 
 $(function() {
+	tiles = $('.hide');
+	$(window).scroll(function(x, y) {
+			tiles.each(function(i) {
+        a = $(this).offset().top + $(this).height();
+        b = $(window).scrollTop() + $(window).height();
+        if (a < b) {
+        	$(this)
+        		.slideDown('slow')
+        		.animate({
+        			opacity: 1,
+        			queue: false,
+        			duration: 'slow'
+        		})
+        };
+    });
+	});
+})
+
+$(function() {
 	var $navigation = $('.navigation'),
 			$openButton = $navigation.find('.button'),
 			$menu = $navigation.find('nav');
@@ -59,7 +78,7 @@ $(function() {
 
 			$(window).scroll(function() {
 				var $y = $(this).scrollTop();
-				if($y == 300) {
+				if($y >= 300) {
 					closeMenu();
 				}
 			});
