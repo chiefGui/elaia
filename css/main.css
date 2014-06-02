@@ -1,0 +1,462 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@font-face{font-family:'MyriadProLight';src:url('../fonts/myriadpro-light-webfont.eot');src:url('../fonts/myriadpro-light-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/myriadpro-light-webfont.woff') format('woff'),url('../fonts/myriadpro-light-webfont.ttf') format('truetype'),url('../fonts/myriadpro-light-webfont.svg#MyriadProLight') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'MyriadProBold';src:url('../fonts/myriadpro-bold-webfont.eot');src:url('../fonts/myriadpro-bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/myriadpro-bold-webfont.woff') format('woff'),url('../fonts/myriadpro-bold-webfont.ttf') format('truetype'),url('../fonts/myriadpro-bold-webfont.svg#MyriadProBold') format('svg');font-weight:normal;font-style:normal;}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
+
+html, body, p {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: url('../img/skulls.jpg');
+}
+
+h1, h2, h3 {
+    font-family: "MyriadProLight", sans serif;
+    font-weight: 100;
+    letter-spacing: -3px;
+}
+
+a {
+    font-family: "MyriadProLight", sans serif;
+    color: #de387e;
+}
+
+p {
+    font-family: "MyriadProLight", sans serif;
+}
+
+p.biggest {
+    font-size: 32px;
+}
+
+p.medium {
+    font-size: 24px;
+}
+
+p:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-x: none;
+}
+
+.triangle {
+    background-image: url('../img/triangle.png');
+    width: 100%;
+    max-width: 1440px;
+    height: 900px;
+    position: absolute;
+    right: 50%;
+    z-index: -111;
+}
+
+header.navigation {
+    background-color: #000;
+    max-width: 1800px;
+    height: 100px;
+    position: relative;
+}
+
+header.navigation .button {
+    background: url('../img/menu_icon.svg');
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 35px auto 0;
+    -moz-transition: transform .2s linear;
+    -webkit-transition: transform .2s linear;
+    -o-transition: transform .2s linear;
+    transition: all .2s linear;
+}
+
+header.navigation .open {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+header.navigation nav {
+    width: 40%;
+    display: none;
+    margin: 25px 75px;
+}
+
+header.navigation nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+header.navigation nav ul li {
+}
+
+header.navigation nav ul li a {
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+header.navigation nav ul li a:hover {
+    color: #f45699;
+}
+
+header.principal {
+    background-color: #000;
+    background-image: url('../img/skulls.jpg');
+    max-width: 1800px;
+    padding: 50px 0;
+    z-index: 999;
+    text-align: center;
+}
+
+.spotlight {
+    width: 100%;
+}
+
+.spotlight.black {
+    background-color: #000;
+}
+
+.spotlight.black h1 {
+    color: #fff;
+}
+
+.spotlight.black p {
+    color: #f2f2f2;
+}
+
+.spotlight .content .context {
+    width: 700px;
+    position: absolute;
+    margin-top: 100px;
+    left: 50%;
+    margin-left: -350px;
+    color: #fff;
+}
+
+.spotlight .content .context h1 {
+    font-size: 64px;
+}
+
+.spotlight .content .context p {
+    margin-bottom: 25px;
+}
+
+.spotlight .content video {
+    max-width: 1800px;
+    width: 1800px;
+    z-index: 999;
+}
+
+.spotlight .presentation.float-right {
+    text-align: right;
+    float: right;
+}
+
+.spotlight .proposal.half {
+    width: 40%;
+}
+
+.spotlight .proposal {
+    width: 600px;
+    float: left;
+    margin: 60px 0 0 120px;
+    color: #666;
+}
+
+.spotlight .proposal h1 {
+    font-size: 48px;
+}
+
+.spotlight .proposal p {
+    letter-spacing: -1px;
+}
+
+@media screen and (max-width: 1024px) {
+    .spotlight .presentation img {
+        width: 1024px;
+    }
+}
+
+@media screen and (max-width: 1799px) {
+    header, .spotlight {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .spotlight .content video {
+        max-width: 1600px;
+    }
+}
+
+.onepage-pagination {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.onepage-pagination li {
+  padding: 0;
+  text-align: center;
+}
+.onepage-pagination li a{
+  padding: 10px;
+  width: 4px;
+  height: 4px;
+  display: block;
+  
+}
+.onepage-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.onepage-pagination li a.active:before{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid black;
+  margin-top: -4px;
+  left: 8px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
