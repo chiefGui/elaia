@@ -124,11 +124,10 @@ p:last-child {
     margin: 0 auto;
 }
 
-.container {
+.container-responsive {
     max-width: 1800px;
     margin: 0 auto;
     overflow-x: hidden;
-    overflow-x: none;
 }
 
 .triangle {
@@ -143,7 +142,6 @@ p:last-child {
 
 header.navigation {
     background-color: #000;
-    max-width: 1800px;
     height: 100px;
     position: relative;
 }
@@ -179,9 +177,6 @@ header.navigation nav ul {
     margin: 0;
 }
 
-header.navigation nav ul li {
-}
-
 header.navigation nav ul li a {
     font-size: 24px;
     text-decoration: none;
@@ -195,7 +190,6 @@ header.navigation nav ul li a:hover {
 header.principal {
     background-color: #000;
     background-image: url('../img/skulls.jpg');
-    max-width: 1800px;
     padding: 50px 0;
     z-index: 999;
     text-align: center;
@@ -264,6 +258,41 @@ header.principal {
     letter-spacing: -1px;
 }
 
+#authors {
+    margin: 0 auto;
+}
+
+#authors ul {
+    padding: 0;
+    margin: 0;
+}
+
+#authors ul li {
+    background-color: #de387e;
+    width: 25%;
+    float: left;
+    list-style: none;
+}
+
+#authors ul li .description {
+    padding: 5px 25px;
+}
+
+#authors ul li .description h1 {
+    color: #fff;
+    letter-spacing: 0;
+}
+
+#authors ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
 @media screen and (max-width: 1024px) {
     .spotlight .presentation img {
         width: 1024px;
@@ -271,59 +300,16 @@ header.principal {
 }
 
 @media screen and (max-width: 1799px) {
-    header, .spotlight {
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-
+    .container-responsive,
     .spotlight .content video {
         max-width: 1600px;
     }
-}
 
-.onepage-pagination {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  z-index: 5;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    .spotlight {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
 }
-.onepage-pagination li {
-  padding: 0;
-  text-align: center;
-}
-.onepage-pagination li a{
-  padding: 10px;
-  width: 4px;
-  height: 4px;
-  display: block;
-  
-}
-.onepage-pagination li a:before{
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(0,0,0,0.85);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-}
-
-.onepage-pagination li a.active:before{
-  width: 10px;
-  height: 10px;
-  background: none;
-  border: 1px solid black;
-  margin-top: -4px;
-  left: 8px;
-}
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
 
 @media only screen and (min-width: 35em) {
 

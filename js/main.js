@@ -1,87 +1,97 @@
-$('.parallax').scrolly({bgParallax: true});
+define(function(require) {
+	var $ = require('jquery'),
+			scrolly = require('scrolly');
 
-$(function() {
-	tiles = $('.hide');
-	$(window).scroll(function(x, y) {
-			tiles.each(function(i) {
-        a = $(this).offset().top + $(this).height();
-        b = $(window).scrollTop() + $(window).height();
-        if (a < b) {
-        	$(this)
-        		.slideDown('slow')
-        		.animate({
-        			opacity: 1,
-        			queue: false,
-        			duration: 'slow'
-        		})
-        };
-    });
-	});
-})
+	$('.parallax').scrolly({bgParallax: true});
 
-$(function() {
-	var $navigation = $('.navigation'),
-			$openButton = $navigation.find('.button'),
-			$menu = $navigation.find('nav');
+	$(function() {
+		tiles = $('.hide');
+		$(window).scroll(function(x, y) {
+				tiles.each(function(i) {
+	        a = $(this).offset().top + $(this).height();
+	        b = $(window).scrollTop() + $(window).height();
+	        if (a < b) {
+	        	$(this)
+	        		.slideDown('slow')
+	        		.animate({
+	        			opacity: 1,
+	        			queue: false,
+	        			duration: 'slow'
+	        		})
+	        };
+	    });
+		});
+	})
 
-	function openMenu() {
-		$openButton.addClass('open');
+	$(function() {
+		var $navigation = $('.navigation'),
+				$openButton = $navigation.find('.button'),
+				$menu = $navigation.find('nav');
 
-		$navigation
-			.stop()
-			.animate({
-				height: '678px'
-			});
+		function openMenu() {
+			$openButton.addClass('open');
 
-			$menu
+			$navigation
 				.stop()
-				.fadeIn();
-	};
+				.animate({
+					height: '678px'
+				});
 
-	function closeMenu(callback) {
-		$openButton.removeClass('open');
+				$menu
+					.stop()
+					.fadeIn();
+		};
 
-		$navigation
-			.stop()
-			.animate({
-				height: '100px'
-			});
+		function closeMenu(callback) {
+			$openButton.removeClass('open');
 
-			$menu
+			$navigation
 				.stop()
-				.fadeOut();
+				.animate({
+					height: '100px'
+				});
 
-		if(callback !== undefined) {
-			callback(578);
-		}
-	};
+				$menu
+					.stop()
+					.fadeOut();
 
-	$menu.find('ul li a').on('click', function(event) {
-		event.preventDefault();
+			if(callback !== undefined) {
+				callback(578);
+			}
+		};
 
-		var $target = $(this).attr('href');
+		$menu.find('ul li a').on('click', function(event) {
+			event.preventDefault();
 
-		closeMenu(function(y) {
-			$('html, body').stop().animate({
-			   scrollTop: ($($target).offset().top - y + 'px')
-			}, 300);
+			var $target = $(this).attr('href');
+
+			closeMenu(function(y) {
+				$('html, body').stop().animate({
+				   scrollTop: ($($target).offset().top - y + 'px')
+				}, 300);
+			});
+		});
+
+		$openButton.on('click', function(event) {
+			event.stopPropagation();
+
+			if ($(this).hasClass('open')) {
+				closeMenu();
+			} else {
+				openMenu();
+
+				$(window).scroll(function() {
+					var $y = $(this).scrollTop();
+					if($y >= 300) {
+						closeMenu();
+					}
+				});
+			}
 		});
 	});
 
-	$openButton.on('click', function(event) {
-		event.stopPropagation();
+	require('UI');
 
-		if ($(this).hasClass('open')) {
-			closeMenu();
-		} else {
-			openMenu();
-
-			$(window).scroll(function() {
-				var $y = $(this).scrollTop();
-				if($y >= 300) {
-					closeMenu();
-				}
-			});
-		}
-	});
+	var UI = new UI;
+	UI.renderAuthors();
 });

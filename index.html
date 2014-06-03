@@ -16,15 +16,14 @@
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script data-main="js/app" src="js/require.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="triangle"></div>
-        <header class="navigation container">
+        <header class="navigation container-responsive">
             <a href="#" class="button"></a>
             <nav>
                 <ul>
@@ -37,13 +36,13 @@
                 </ul>
             </nav>
         </header>
-        <header class="principal container parallax" data-velocity=".8">
+        <header class="principal container-responsive parallax" data-velocity=".8">
             <div class="wrapper">
                 <a href="index.html"><img src="img/logo.gif" alt="Logo Elaiá"></a>
             </div>
         </div>
         </header>
-        <article id="longboard-girls-crew" class="spotlight">
+        <article id="longboard-girls-crew" class="spotlight container-responsive">
             <section class="content container">
                 <div class="context hide">
                     <h1>Longboarding é sexy.</h1>
@@ -67,7 +66,7 @@
                 </video>
             </section>
         </article>
-        <article id="macklemore" class="spotlight black container">
+        <article id="macklemore" class="spotlight black container-responsive">
             <section class="content">
                 <div class="hide">
                     <div class="proposal half">
@@ -107,8 +106,8 @@
                 </div>
             </section>
         </article>
-        <article id="mercurial" class="spotlight">
-            <section class="content container">
+        <article id="mercurial" class="spotlight container-responsive">
+            <section class="content">
                 <div class="context hide">
                     <h1>A Mercurial também é sexy.</h1>
                     <p class="biggest">
@@ -125,12 +124,22 @@
                 </video>
             </section>
         </article>
-
-        <script src="js/vendor/jquery-2.1.1.min.js"></script>
-        <script src="js/vendor/jquery.scrolly.js"></script>
-        <script src="js/vendor/onepage-scroll.min.js"></script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <section id="authors" class="container container-responsive">
+            <ul>
+                <li>
+                    <img src="img/artists/1.jpg">
+                    <div class="description">
+                        <h1>Martina Beatriz</h1>
+                        <p class="big">
+                            A nossa líder de design, mãe de duas meninas
+                            e riquíssima em criatividade.
+                        </p>
+                    </div>
+                </li>
+                <li><img src="img/artists/2.jpg"></li>
+                <li><img src="img/artists/3.jpg"></li>
+                <li><img src="img/artists/4.jpg"></li>
+            </ul>
+        </section>
     </body>
 </html>
